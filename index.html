@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+    <title>FENIX</title>
+
+    <style>
+        @media screen and (max-width: 768px) {
+            table {
+                /* Cambiar a un diseño de una sola columna */
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            th,
+            td {
+                /* Asegurarse de que los encabezados y celdas ocupen todo el ancho de la pantalla */
+                width: 100%;
+            }
+
+        }
+
+        @media screen and (min-width: 768px) {
+
+            /* Estilos para la vista de escritorio */
+            header {
+                display: grid;
+
+                max-width: 800px;
+                /* Ancho máximo del contenedor */
+                margin: 0 auto;
+                /* Centrar el contenedor horizontalmente */
+            }
+
+            .logo {
+                grid-row: 1;
+                grid-column: 1;
+                width: 250px;
+                height: auto;
+            }
+
+            .titulo-pagina {
+                grid-row: 2;
+                grid-column: 1;
+                width: 250px;
+
+            }
+
+            .eslogan {
+                grid-row: 2;
+                grid-column: 2;
+                width: 100%;
+
+            }
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="como-comprar.html">Cómo comprar</a></li>
+            <li><a href="marcas.html">Marcas</a></li>
+            <li><a href="pagos.html">Pagos/Transferencias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img class="logo" src="img/fenix.jpg" alt="Logo de Fenix">
+        <h1 class="titulo-pagina">Fenix - Electrónica y Tecnología</h1>
+        <h2 class="eslogan">Eslogan del negocio</h2>
+    </header>
+
+    <details id="carritoDetails">
+        <summary>Carrito (<span id="totalProductos">0</span> productos)</summary>
+
+
+        <div class="card">
+            <div class="card-header">
+                Lista de productos en el carrito
+            </div>
+            <ul class="list-group list-group-flush" id="carritoProductos">
+                <!-- Aquí se mostrarán los productos agregados al carrito -->
+            </ul>
+            <div class="card-footer">
+                <strong>Total de la compra: <span id="totalCompra">$0.00</span></strong>
+                <button id="btnPagar" class="btn btn-primary">Pagar</button>
+            </div>
+        </div>
+    </details>
+
+
+    <!-- Tabla de productos -->
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Imagen pequeña</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-precio="49.99">
+                <td>001</td>
+                <td class="producto-imagen"><img src="img/fonos.jpg" alt="Producto 1"></td>
+                <td>Producto 1</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                <td>$49.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="49.99">+</button>
+                    </div>
+                </td>
+
+            </tr>
+            <tr data-precio="29.99">
+                <td>002</td>
+                <td class="producto-imagen"><img src="imagen2.jpg" alt="Producto 2"></td>
+                <td>Producto 2</td>
+                <td>Maecenas tempus, nisl quis elementum euismod, odio elit vehicula eros.</td>
+                <td>$29.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="29.99">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr data-precio="39.99">
+                <td>003</td>
+                <td class="producto-imagen"><img src="imagen3.jpg" alt="Producto 3"></td>
+                <td>Producto 3</td>
+                <td>In viverra elit in elit rutrum, nec dignissim mi efficitur.</td>
+                <td>$39.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="39.99">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr data-precio="19.99">
+                <td>004</td>
+                <td class="producto-imagen"><img src="imagen4.jpg" alt="Producto 4"></td>
+                <td>Producto 4</td>
+                <td>Nullam dapibus lorem at nisl auctor, a consequat lorem blandit.</td>
+                <td>$19.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="19.99">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr data-precio="64.99">
+                <td>005</td>
+                <td class="producto-imagen"><img src="imagen5.jpg" alt="Producto 5"></td>
+                <td>Producto 5</td>
+                <td>Proin consectetur mi vel ligula fermentum, vel commodo nisi elementum.</td>
+                <td>$64.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="64.99">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr data-precio="14.99">
+                <td>006</td>
+                <td class="producto-imagen"><img src="imagen6.jpg" alt="Producto 6"></td>
+                <td>Producto 6</td>
+                <td>Donec vel odio a erat rhoncus vulputate.</td>
+                <td>$14.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="14.99">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr data-precio="44.99">
+                <td>007</td>
+                <td class="producto-imagen"><img src="imagen7.jpg" alt="Producto 7"></td>
+                <td>Producto 7</td>
+                <td>Phasellus rhoncus purus a auctor scelerisque.</td>
+                <td>$44.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="44.99">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr data-precio="54.99">
+                <td>008</td>
+                <td class="producto-imagen"><img src="imagen8.jpg" alt="Producto 8"></td>
+                <td>Producto 8</td>
+                <td>Aenean volutpat justo non eros ullamcorper, eget vulputate felis interdum.</td>
+                <td>$54.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="54.99">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr data-precio="34.99">
+                <td>009</td>
+                <td class="producto-imagen"><img src="imagen9.jpg" alt="Producto 9"></td>
+                <td>Producto 9</td>
+                <td>Integer tincidunt odio vel consequat fermentum.</td>
+                <td>$34.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="34.99">+</button>
+                    </div>
+                </td>
+            </tr>
+            <tr data-precio="74.99">
+                <td>010</td>
+                <td class="producto-imagen"><img src="imagen10.jpg" alt="Producto 10"></td>
+                <td>Producto 10</td>
+                <td>Ut in libero euismod, luctus libero in, egestas nisi.</td>
+                <td>$74.99</td>
+                <td>
+                    <!-- Input numérico con botones "+" y "-" -->
+                    <div class="input-group">
+                        <button type="button" class="btn btn-outline-secondary decrementar-btn">-</button>
+                        <input type="number" class="form-control cantidad-input" value="0" min="0">
+                        <button type="button" class="btn btn-outline-secondary incrementar-btn"
+                            data-precio="74.99">+</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        <p>Síguenos en redes sociales:</p>
+        <ul class="social-links">
+            <a href="enlace_red_social1">Facebook</a>
+            <a href="enlace_red_social2">Twitter</a>
+       
+        </ul>
+        <p>Derechos reservados &copy; 2023 Fenix</p>
+    </footer>
+
+    <script>
+        // Obtener todos los elementos del DOM necesarios
+        const decrementarBtns = document.querySelectorAll(".decrementar-btn");
+        const incrementarBtns = document.querySelectorAll(".incrementar-btn");
+        const cantidadInputs = document.querySelectorAll(".cantidad-input");
+        const carritoDetails = document.getElementById("carritoDetails");
+        const carritoProductos = document.getElementById("carritoProductos");
+        const totalCompra = document.getElementById("totalCompra");
+        const totalProductos = document.getElementById("totalProductos"); // Agrega esta línea para obtener el elemento del total de productos
+
+        let productosEnCarrito = []; // Lista de productos en el carrito
+
+        // Función para obtener el índice del producto en el carrito
+        function obtenerIndiceProducto(nombreProducto) {
+            return productosEnCarrito.findIndex((producto) => producto.nombre === nombreProducto);
+        }
+
+        function actualizarCarrito() {
+            carritoProductos.innerHTML = ""; // Limpiar la lista de productos en el carrito
+            let totalCompraValor = 0; // Inicializar el total de la compra en 0
+            let totalProductosValor = 0; // Inicializar el total de productos en 0
+
+            productosEnCarrito.forEach((producto) => {
+                const totalProducto = producto.precio * producto.cantidad;
+                totalCompraValor += totalProducto;
+                totalProductosValor += producto.cantidad;
+
+                const li = document.createElement("li");
+                li.classList.add("list-group-item");
+                li.innerHTML = `${producto.nombre} - Cantidad: ${producto.cantidad} - Total: $${totalProducto.toFixed(2)}`;
+                carritoProductos.appendChild(li);
+            });
+
+            totalCompra.textContent = `$${totalCompraValor.toFixed(2)}`;
+            totalProductos.textContent = totalProductosValor; // Actualiza el total de productos en el carrito
+
+            // Asegúrate de que el valor del carrito se muestre correctamente en el resumen
+            carritoDetails.querySelector("#totalProductos").textContent = totalProductosValor;
+        }
+
+
+        // Agregar event listeners a los botones "+" y "-" para cambiar la cantidad
+        decrementarBtns.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                if (cantidadInputs[index].value > 0) {
+                    cantidadInputs[index].value = parseInt(cantidadInputs[index].value) - 1;
+
+                    const nombreProducto = "Producto " + (index + 1);
+                    const cantidadProducto = parseInt(cantidadInputs[index].value);
+
+                    if (cantidadProducto === 0) {
+                        productosEnCarrito = productosEnCarrito.filter((producto) => producto.nombre !== nombreProducto);
+                    } else {
+                        const indiceProducto = obtenerIndiceProducto(nombreProducto);
+                        if (indiceProducto !== -1) {
+                            productosEnCarrito[indiceProducto].cantidad = cantidadProducto;
+                        }
+                    }
+
+                    actualizarCarrito();
+                }
+            });
+        });
+
+        incrementarBtns.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                cantidadInputs[index].value = parseInt(cantidadInputs[index].value) + 1;
+
+                const nombreProducto = "Producto " + (index + 1);
+                const cantidadProducto = parseInt(cantidadInputs[index].value);
+                const precioProducto = parseFloat(btn.getAttribute("data-precio")); // Obtenemos el precio directamente del botón
+
+                const producto = {
+                    nombre: nombreProducto,
+                    precio: precioProducto,
+                    cantidad: cantidadProducto,
+                };
+
+                const indiceProducto = obtenerIndiceProducto(nombreProducto);
+                if (indiceProducto !== -1) {
+                    productosEnCarrito[indiceProducto].cantidad = cantidadProducto;
+                } else {
+                    productosEnCarrito.push(producto);
+                }
+
+                actualizarCarrito();
+            });
+        });
+
+        const btnPagar = document.getElementById("btnPagar");
+        btnPagar.addEventListener("click", () => {
+            // Verificar que el carrito no esté vacío antes de redirigir
+            if (productosEnCarrito.length > 0) {
+                // Redirigir a la página de despacho.html
+                window.location.href = "despacho.html";
+            } else {
+                // Si el carrito está vacío, mostrar un mensaje de error o alguna acción adicional si es necesario
+                alert("El carrito está vacío. Agregue productos antes de pagar.");
+            }
+        });
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

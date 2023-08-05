@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css">
+
+
+    <style>
+        /* Estilos para la vista de escritorio */
+        .contenedor {
+            display: grid;
+
+            max-width: 800px;
+            /* Ancho máximo del contenedor */
+            margin: 0 auto;
+            /* Centrar el contenedor horizontalmente */
+        }
+
+        .imagen {
+            grid-row: 1;
+            grid-column: 1;
+            width: 100%;
+        }
+
+        .formulario-beneficios {
+            grid-row: 1;
+            grid-column: 2;
+            width: 100%;
+
+        }
+
+        /* Estilos para vista inferior a 768px */
+        @media screen and (max-width: 768px) {
+            .contenedor {
+                display: grid;
+                justify-content: center;
+            }
+
+            .contenedor .imagen {
+                grid-row: 1;
+                grid-column: 1;
+            }
+
+            .contenedor .formulario-beneficios {
+                grid-row: 2;
+                grid-column: 1;
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Fenix</h1>
+        <h2>Regístrate dentro de los 100 primeros
+            y recibirás un descuento</h2>
+    </header>
+
+    <section class="about">
+        <h3>Acerca de Fenix</h3>
+        <p>Fenix es una empresa dedicada al rubro de tecnología y electrónica, con más de 15 años de experiencia en el
+            mercado. Nuestro objetivo es brindar soluciones innovadoras y de calidad que impulsen el crecimiento de tu
+            negocio.</p>
+    </section>
+
+    <section class="contenedor">
+        <div class="imagen">
+            <img src="img/fenix.jpg" height="250px">
+            <p>Image copyrights to https://www.google.com/</p>
+        </div>
+        <div class="formulario-beneficios">
+            <form>
+                <p>Nombre</p>
+                <input type="text">
+                <p>Email</p>
+                <input type="email" />
+                <br>
+                <br>
+                <button type="submit">Regístrate</button>
+            </form>
+        </div>
+    </section>
+
+
+    <section class="advantages">
+        <h3>Ventajas principales de escoger a Fenix</h3>
+        <ul>
+            <li>Amplia gama de productos electrónicos y tecnológicos.</li>
+            <li>Asesoramiento personalizado para encontrar las mejores soluciones para tu negocio.</li>
+            <li>Entrega rápida y eficiente, garantizando que tus productos estén siempre disponibles.</li>
+            <li>Precios competitivos que se ajustan a tu presupuesto.</li>
+        </ul>
+    </section>
+
+
+    <section class="brands">
+        <h3>Marcas próximamente disponibles</h3>
+        <ul>
+            <li><a href="enlace_fabricante1"><img src="logo_fabricante1.png" alt="Fabricante 1"></a></li>
+            <li><a href="enlace_fabricante2"><img src="logo_fabricante2.png" alt="Fabricante 2"></a></li>
+            <!-- Agrega más marcas y enlaces según sea necesario -->
+        </ul>
+    </section>
+
+    <section class="contact">
+        <h3>Contacto</h3>
+        <p>Dirección: Av. Tecnológica 123, Ciudad Futura.</p>
+        <p>Email: contacto@fenixnegocio.com</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3345.637132675057!2d-71.54550999999996!3d-33.013341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDAwJzQ4LjAiUyA3McKwMzInNDMuOCJX!5e0!3m2!1ses!2scl!4v1689794172029!5m2!1ses!2scl"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <section class="testimonials">
+        <h3>Testimonios</h3>
+        <blockquote>
+            <p>"Gracias a Fenix, pudimos modernizar nuestra tienda y ofrecer una experiencia única a nuestros clientes.
+                Su equipo nos ayudó a elegir los productos adecuados y el resultado ha sido increíble."</p>
+            <cite>Marta Gómez, Tienda Eléctrica Gama</cite>
+        </blockquote>
+        <blockquote>
+            <p>"La atención y el servicio de Fenix son excepcionales. Siempre encuentro lo que necesito y a un precio
+                inmejorable. Recomiendo totalmente a Fenix a otros emprendedores."</p>
+            <cite>Juan Pérez, Distribuidora Electrónica Nova</cite>
+        </blockquote>
+    </section>
+
+    <section class="download">
+        <h3>Descarga nuestro folleto</h3>
+        <a href="#" download>Descargar folleto en PDF</a>
+    </section>
+
+
+    <footer>
+        <p>Síguenos en redes sociales:</p>
+        <ul class="social-links">
+            <a href="enlace_red_social1">Facebook</a>
+            <a href="enlace_red_social2">Twitter</a>
+            <!-- Agrega más enlaces a redes sociales según sea necesario -->
+        </ul>
+        <p>Derechos reservados &copy; 2023 Fenix</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>MARCAS</title>
+
+    <style>
+        /* Estilo general para las imágenes en todas las vistas */
+        .lista-marcas img {
+            width: 80%;
+            display: block;
+            height: 200px;
+            object-fit: contain;
+
+            /* Esto asegura que las imágenes se ajusten proporcionalmente al ancho del contenedor */
+        }
+
+
+        @media screen and (min-width: 768px) {
+            .lista-marcas {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .lista-marcas li {
+                width: 23%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .lista-marcas img {
+                width: 80%;
+                display: block;
+                margin: 0 auto;
+                height: auto;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="como-comprar.html">Cómo comprar</a></li>
+            <li><a href="marcas.html">Marcas</a></li>
+            <li><a href="pagos.html">Pagos/Transferencias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido de la página de marcas -->
+    <h1>Marcas distribuidas por Fenix</h1>
+    <ul class="lista-marcas">
+        <li>
+            <h2>Razer</h2>
+            <a href="https://www.razer.com">
+                <img src="img/razer.png" alt="Logo de Razer">
+            </a>
+        </li>
+        <li>
+            <h2>Logitech</h2>
+            <a href="https://www.logitech.com/es-roam">
+                <img src="img/logitech.png" alt="Logo de Logitech">
+            </a>
+        </li>
+        <li>
+            <h2>Sevenwin</h2>
+            <a href="https://www.sevenwin.cl/">
+                <img src="img/sevenwin.png" alt="Logo de Sevenwin">
+            </a>
+        </li>
+        <li>
+            <h2>HyperX</h2>
+            <a href="https://hyperx.com">
+                <img src="img/hyperx.png" alt="Logo de Hyperx">
+            </a>
+        </li>
+    </ul>
+
+    <footer>
+        <p>Síguenos en redes sociales:</p>
+        <ul class="social-links">
+            <a href="enlace_red_social1">Facebook</a>
+            <a href="enlace_red_social2">Twitter</a>
+            <!-- Agrega más enlaces a redes sociales según sea necesario -->
+        </ul>
+        <p>Derechos reservados &copy; 2023 Fenix</p>
+    </footer>
+</body>
+
+</html>

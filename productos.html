@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Estilos específicos para la página de productos -->
+    <style>
+        /* Estilos para la imagen del producto */
+        .producto-imagen img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Estilos para la vista móvil */
+
+            .producto-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* Centrar horizontalmente */
+                text-align: center;
+                /* Centrar el texto horizontalmente */
+            }
+
+            .producto-imagen img {
+                max-width: 250px;
+                /* Limitar el ancho de la imagen */
+            }
+
+            .producto-info {
+                width: 100%;
+                /* Ocupar todo el ancho de la pantalla */
+                margin-top: 20px;
+                /* Espacio entre la imagen y la descripción */
+            }
+
+            .titulo,
+            .reseña {
+                width: 100%;
+                text-align: center;
+                /* Ocupar todo el ancho de la pantalla */
+            }
+
+        }
+    </style>
+
+    <title>PRODUCTOS</title>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="como-comprar.html">Cómo comprar</a></li>
+            <li><a href="marcas.html">Marcas</a></li>
+            <li><a href="pagos.html">Pagos/Transferencias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="titulo">Título del producto</h1>
+    <p class="reseña">Reseña del producto</p>
+
+    <!-- Contenedor principal -->
+    <div class="producto-section">
+        <!-- Lado izquierdo: Foto de mayor tamaño -->
+        <div class="producto-imagen">
+            <img src="img/fonos.jpg" alt="Imagen del producto">
+        </div>
+
+        <!-- Lado derecho: Descripción, precio y descuentos -->
+        <div class="producto-info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor ex id lorem hendrerit, sit amet
+                bibendum urna accumsan. Nullam nec pellentesque eros. Integer finibus, quam eget feugiat venenatis, quam
+                ex efficitur enim, ac venenatis odio arcu eget justo. Proin aliquam interdum tellus, eu facilisis
+                mauris luctus ac. Sed tincidunt consequat nulla, ac iaculis arcu. Nunc facilisis feugiat libero sit amet
+                tristique. Nullam et neque nec quam tristique facilisis.</p>
+            <p>Precio: $99.99</p>
+            <p>Descuento por volumen: Compra 2 o más productos y obtén un 10% de descuento.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Síguenos en redes sociales:</p>
+        <ul class="social-links">
+            <a href="enlace_red_social1">Facebook</a>
+            <a href="enlace_red_social2">Twitter</a>
+            <!-- Agrega más enlaces a redes sociales según sea necesario -->
+        </ul>
+        <p>Derechos reservados &copy; 2023 Fenix</p>
+    </footer>
+
+</body>
+
+</html>

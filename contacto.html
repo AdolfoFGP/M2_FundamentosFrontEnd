@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>CONTACTO</title>
+
+    <style>
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Dos columnas de igual tamaño */
+            grid-gap: 20px;
+            /* Espacio entre las columnas */
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .contact {
+                display: grid;
+                grid-template-columns: 1fr;
+                /* Dos columnas de igual tamaño */
+                grid-gap: 20px;
+                /* Espacio entre las columnas */
+                width: 100%;
+            }
+
+            .map {
+                width: 100%; /* Ocupar todo el ancho disponible */
+            max-width: 100; /* Limitar el ancho máximo del mapa */
+
+                
+                /* Eliminamos el margen anterior y aplicamos solo el centrado horizontal */
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="como-comprar.html">Cómo comprar</a></li>
+            <li><a href="marcas.html">Marcas</a></li>
+            <li><a href="pagos.html">Pagos/Transferencias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido de la página de contacto -->
+    <h1>Contacto</h1>
+    <!-- Canales de contacto y mapa de tienda física -->
+    <section class="contact">
+        <p>Dirección: Av. Tecnológica 123, Ciudad Futura.</p>
+        <p>Email: contacto@fenixnegocio.com</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam sunt voluptatibus accusantium aliquam deleniti,
+            ipsa vel architecto, minus corporis fugit maiores consequuntur aut sequi vitae est voluptatum unde sint
+            facilis.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse quibusdam atque quas accusantium dicta
+            necessitatibus, repudiandae ab ipsam libero, exercitationem delectus labore vero tempora expedita numquam
+            ducimus amet, voluptatum aperiam.
+        </p>
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3345.637132675057!2d-71.54550999999996!3d-33.013341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDAwJzQ4LjAiUyA3McKwMzInNDMuOCJX!5e0!3m2!1ses!2scl!4v1689794172029!5m2!1ses!2scl"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+
+    <footer>
+        <p>Síguenos en redes sociales:</p>
+        <ul class="social-links">
+            <a href="enlace_red_social1">Facebook</a>
+            <a href="enlace_red_social2">Twitter</a>
+            <!-- Agrega más enlaces a redes sociales según sea necesario -->
+        </ul>
+        <p>Derechos reservados &copy; 2023 Fenix</p>
+    </footer>
+</body>
+
+</html>

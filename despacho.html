@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Despacho</title>
+
+    <style>
+        .footer {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="como-comprar.html">Cómo comprar</a></li>
+            <li><a href="marcas.html">Marcas</a></li>
+            <li><a href="pagos.html">Pagos/Transferencias</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <h1>Información de Despacho</h1>
+        <form id="despachoForm">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+        </form>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exitoModal" tabindex="-1" aria-labelledby="exitoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exitoModalLabel">Su compra ya está en camino!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Su compra ha sido confirmada y está en camino. Gracias por su compra!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Síguenos en redes sociales:</p>
+        <ul class="social-links">
+            <a href="enlace_red_social1">Facebook</a>
+            <a href="enlace_red_social2">Twitter</a>
+            
+        </ul>
+        <p>Derechos reservados &copy; 2023 Fenix</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Obtener el formulario y el botón de Confirmar
+        const despachoForm = document.getElementById("despachoForm");
+        const confirmarBtn = document.querySelector("button[type='submit']");
+
+        // Agregar evento de envío al formulario
+        despachoForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevenir el envío por defecto del formulario
+
+            // Mostrar el modal de éxito
+            const exitoModal = new bootstrap.Modal(document.getElementById("exitoModal"), {
+                backdrop: "static", // Evita que el modal se cierre al hacer clic fuera de él
+                keyboard: false // Evita que el modal se cierre al presionar la tecla "Esc"
+            });
+            exitoModal.show();
+
+            // Redirigir a la página principal de productos después de 5 segundos
+            setTimeout(() => {
+                exitoModal.hide();
+                window.location.href = "index.html"; // Cambiar "productos.html" por la URL de tu página principal
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
